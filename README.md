@@ -1,2 +1,2 @@
-# Organizer
-[circleci Builder](https://circleci.com/gh/VolodimirDrozd/Organizer/2)
+### Status
+[![Build Status](https://travis-ci.org/VolodimirDrozd/Organizer.png)](https://travis-ci.org/VolodimirDrozd/Organizer)
