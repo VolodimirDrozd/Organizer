@@ -2,7 +2,6 @@ package com.as;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Calendar;
 import java.util.Locale;
 import java.util.Properties;
 
@@ -34,16 +33,6 @@ public class AppTest extends Assert {
 		assertTrue(property.getProperty("night").equals("Good night, World!"));
 	}
 
-	@Test
-	public void changeRussianLocale() throws IOException {
-		locale = Locale.getDefault();
-		fis = app.changePropertyCurrentLenguage(locale.getLanguage());
-		property.load(fis);
-		assertTrue(property.getProperty("morning").equals("Доброе утро, Мир!"));
-		assertTrue(property.getProperty("day").equals("Добрый день, Мир!"));
-		assertTrue(property.getProperty("evening").equals("Добрый вечер, Мир!"));
-		assertTrue(property.getProperty("night").equals("Доброй ночи, Мир!"));
-	}
 
 	@Test
 	public void testEnglishLocale() throws IOException {
@@ -51,36 +40,37 @@ public class AppTest extends Assert {
 		fis = app.changePropertyCurrentLenguage(locale.getLanguage());
 		property.load(fis);
 		int hourMorning = 8;
-		String morning  = app.showDayTimeCongrats(hourMorning, property);
+		String morning = app.showDayTimeCongrats(hourMorning, property);
 		assertTrue(morning.equals("Good morning, World!"));
 		int hourDay = 12;
-		String day  = app.showDayTimeCongrats(hourDay, property);
+		String day = app.showDayTimeCongrats(hourDay, property);
 		assertTrue(day.equals("Good day, World!"));
 		int hourEvening = 20;
-		String evening  = app.showDayTimeCongrats(hourEvening, property);
+		String evening = app.showDayTimeCongrats(hourEvening, property);
 		assertTrue(evening.equals("Good evening, World!"));
 		int hourNight = 1;
-		String night  = app.showDayTimeCongrats(hourNight, property);
+		String night = app.showDayTimeCongrats(hourNight, property);
 		assertTrue(night.equals("Good night, World!"));
 	}
 
 	@Test
 	public void testRussianLocale() throws IOException {
-		locale = Locale.getDefault();
+
+		locale = app.getUaLocale();
 		fis = app.changePropertyCurrentLenguage(locale.getLanguage());
 		property.load(fis);
 		int hourMorning = 8;
-		String morning  = app.showDayTimeCongrats(hourMorning, property);
-		assertTrue(morning.equals("Доброе утро, Мир!"));
+		String morning = app.showDayTimeCongrats(hourMorning, property);
+		assertTrue(morning.equals(property.get("morning")));
 		int hourDay = 12;
-		String day  = app.showDayTimeCongrats(hourDay, property);
-		assertTrue(day.equals("Добрый день, Мир!"));
+		String day = app.showDayTimeCongrats(hourDay, property);
+		assertTrue(day.equals(property.get("day")));
 		int hourEvening = 20;
-		String evening  = app.showDayTimeCongrats(hourEvening, property);
-		assertTrue(evening.equals("Добрый вечер, Мир!"));
+		String evening = app.showDayTimeCongrats(hourEvening, property);
+		assertTrue(evening.equals(property.get("evening")));
 		int hourNight = 1;
-		String night  = app.showDayTimeCongrats(hourNight, property);
-		assertTrue(night.equals("Доброй ночи, Мир!"));
+		String night = app.showDayTimeCongrats(hourNight, property);
+		assertTrue(night.equals(property.get("night")));
 	}
 
 }

@@ -9,11 +9,13 @@ import java.util.Properties;
 
 public class App {
 	public static void main(String[] args) throws IOException {
+
+		App app = new App();
+		Locale locale = app.getUaLocale();
 		Calendar calendar = Calendar.getInstance();
 		int hour = calendar.get(Calendar.HOUR_OF_DAY);
 		Properties property = new Properties();
-		Locale locale = Locale.getDefault();
-		App app = new App();
+
 		FileInputStream fis = app.changePropertyCurrentLenguage(locale.getLanguage());
 		property.load(fis);
 		app.showDayTimeCongrats(hour, property);
@@ -54,4 +56,9 @@ public class App {
 		}
 		return fis;
 	}
+
+	public Locale getUaLocale() {
+		return new Locale.Builder().setLanguage("ru").setRegion("UA").build();
+	}
+
 }
