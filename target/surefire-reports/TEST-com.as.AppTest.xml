@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="com.as.AppTest" time="0.01" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="com.as.AppTest" time="0.012" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="D:\Java\jdk1.8.0_111\jre\bin"/>
     <property name="java.vm.version" value="25.111-b14"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="D:\Workspace\organizer"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\Git\Organizer"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="Service Pack 1"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\Workspace\organizer"/>
+    <property name="user.dir" value="D:\Git\Organizer"/>
     <property name="java.runtime.version" value="1.8.0_111-b14"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="D:\Java\jdk1.8.0_111\jre\lib\endorsed"/>
@@ -63,7 +63,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase classname="com.as.AppTest" name="changeEnglishLocale" time="0.007"/>
-  <testcase classname="com.as.AppTest" name="testRussianLocale" time="0.002"/>
+  <testcase classname="com.as.AppTest" name="changeEnglishLocale" time="0.008"/>
+  <testcase classname="com.as.AppTest" name="testRussianLocale" time="0.003"/>
   <testcase classname="com.as.AppTest" name="testEnglishLocale" time="0.001"/>
 </testsuite>
